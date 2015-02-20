@@ -3,6 +3,8 @@
 
 #include <string>
 
+using namespace std;
+
 const string PERIODE_ACCES_MATIN = "Matin";
 const string PERIODE_ACCES_SOIR = "Soir";
 const string PERIODE_ACCES_NUIT = "Nuit";
@@ -14,7 +16,7 @@ class RegleAcces
 {
 public:
 	RegleAcces();
-	RegleAcces(unsigned int niveau, const string& local, const string& periode);
+	RegleAcces(const unsigned int& niveau, const string& local, const string& periode); //CHANGÉ: Ajouté const devant unsigned int niveau
 
 	string			getLocal()				const;
 	unsigned int	getNiveauAccesRequis()	const;

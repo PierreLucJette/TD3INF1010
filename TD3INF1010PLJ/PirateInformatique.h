@@ -12,7 +12,6 @@ class PirateInformatique :public AgentSecurite{
 
 public:
 	PirateInformatique(const AgentSecurite& agentSecurite);
-	virtual ~PirateInformatique();
 
 	virtual unsigned int getNiveauAcces() const;
 

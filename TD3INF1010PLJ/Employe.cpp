@@ -10,8 +10,6 @@ Employe::Employe(const string& nom, const string& prenom){
 	prenom_ = prenom;
 }
 
-Employe::~Employe(){};
-
 string Employe::getNom() const{
 	return nom_;
 }

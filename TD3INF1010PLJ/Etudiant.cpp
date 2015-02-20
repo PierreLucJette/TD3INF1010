@@ -9,8 +9,6 @@ Etudiant::Etudiant(const string& nom, const string& prenom) : Employe(nom, preno
 	prenom_ = prenom;
 }
 
-Etudiant::~Etudiant(){}
-
 unsigned int Etudiant::getNiveauAcces() const{
 	return accesEtudiant_;
 }

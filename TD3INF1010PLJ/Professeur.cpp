@@ -9,8 +9,6 @@ Professeur::Professeur(const string& nom, const string& prenom) :Employe(nom, pr
 	prenom_ = prenom;
 }
 
-Professeur::~Professeur(){}
-
 unsigned int Professeur::getNiveauAcces() const{
 	return accesProfesseur_ + Employe::getNiveauAcces();
 }

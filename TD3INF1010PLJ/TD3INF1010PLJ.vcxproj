@@ -91,6 +91,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PirateInformatique.cpp" />
     <ClCompile Include="Professeur.cpp" />
+    <ClCompile Include="RegleAcces.cpp" />
+    <ClCompile Include="SystemeSecurite.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

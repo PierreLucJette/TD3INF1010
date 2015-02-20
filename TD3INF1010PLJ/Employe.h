@@ -10,7 +10,6 @@ class Employe{
 
 public:
 	Employe(const string& nom, const string& prenom);
-	virtual ~Employe();
 
 	virtual string getNom() const;
 	virtual string getPrenom() const;

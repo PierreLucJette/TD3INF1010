@@ -11,7 +11,6 @@ class Etudiant :public Employe{
 
 public:
 	Etudiant(const string& nom, const string& prenom);
-	virtual ~Etudiant();
 
 	virtual unsigned int getNiveauAcces() const;
 	virtual string getClasseEmploye() const;

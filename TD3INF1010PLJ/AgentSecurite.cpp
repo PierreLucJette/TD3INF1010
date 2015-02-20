@@ -9,8 +9,6 @@ AgentSecurite::AgentSecurite(const string& nom, const string& prenom): Employe(n
 	prenom_ = prenom;
 }
 
-AgentSecurite::~AgentSecurite(){}
-
 unsigned int AgentSecurite::getNiveauAcces() const{
 	return accesAgentSecurite_ + Employe::getNiveauAcces();
 }

@@ -10,8 +10,6 @@ PirateInformatique::PirateInformatique(const AgentSecurite& agentSecurite): Agen
 
 }
 
-PirateInformatique::~PirateInformatique(){}
-
 unsigned int PirateInformatique::getNiveauAcces() const{
 	return AgentSecurite::getNiveauAcces();
 }

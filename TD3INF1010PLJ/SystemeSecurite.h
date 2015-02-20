@@ -5,10 +5,19 @@
 #include "AgentSecurite.h"
 #include "Professeur.h"
 #include "Etudiant.h"
+#include "Employe.h"
 #include <vector>
 #include <string>
 
 using namespace std;
+
+struct Journal{
+	Employe* lambda;
+	string local = "";
+	string periode = "";
+	string acces = "";
+	//TODO: Justifier l'utilisation de cettre structure par rapport à sstring
+};
 
 class SystemeSecurite
 {
@@ -27,7 +36,7 @@ public:
 
 private:
 	vector<RegleAcces>		regles_;
-	vector<string>			journalAcces_;
+	vector<Journal>			journalAcces_;
 };
 
-#endif //DEPARTEMENT_H
+#endif

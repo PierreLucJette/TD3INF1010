@@ -56,5 +56,11 @@
     <ClCompile Include="PirateInformatique.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RegleAcces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemeSecurite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

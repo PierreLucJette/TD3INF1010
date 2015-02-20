@@ -11,7 +11,6 @@ class AgentSecurite :public Employe{
 
 public:
 	AgentSecurite(const string& nom, const string& prenom);
-	virtual ~AgentSecurite();
 
 	virtual unsigned int getNiveauAcces() const;
 	virtual string getClasseEmploye() const;
