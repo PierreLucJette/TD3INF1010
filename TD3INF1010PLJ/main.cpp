@@ -18,25 +18,40 @@ int main()
 	//Ajout des règles d'accès
 	RegleAcces l3589m(1, "L-3589", PERIODE_ACCES_MATIN);
 	RegleAcces l3587m(1, "L-3587", PERIODE_ACCES_MATIN);
-	RegleAcces l5388m(1, "L-3588", PERIODE_ACCES_MATIN);
+	systeme.ajouterRegle(l3587m);
+	RegleAcces l3588m(1, "L-3588", PERIODE_ACCES_MATIN);
+	systeme.ajouterRegle(l3588m);
 	//
 	RegleAcces l3589s(5, "L-3589", PERIODE_ACCES_SOIR);
+	systeme.ajouterRegle(l3589s);
 	RegleAcces l3587s(5, "L-3587", PERIODE_ACCES_SOIR);
+	systeme.ajouterRegle(l3587s);
 	RegleAcces l3588s(5, "L-3588", PERIODE_ACCES_SOIR);
+	systeme.ajouterRegle(l3588s);
 	//
 	RegleAcces l3589n(20, "L-3589", PERIODE_ACCES_NUIT);
+	systeme.ajouterRegle(l3589n);
 	RegleAcces l3587n(20, "L-3587", PERIODE_ACCES_NUIT);
+	systeme.ajouterRegle(l3587n);
 	RegleAcces l3588n(25, "L-3588", PERIODE_ACCES_NUIT);
+	systeme.ajouterRegle(l3588n);
 	//
 	RegleAcces l4489m(10, "L-4489", PERIODE_ACCES_MATIN);
+	systeme.ajouterRegle(l4489m);
 	RegleAcces l4487m(10, "L-4487", PERIODE_ACCES_MATIN);
+	systeme.ajouterRegle(l4487m);
 	//
 	RegleAcces l4489s(10, "L-4489", PERIODE_ACCES_SOIR);
+	systeme.ajouterRegle(l4489s);
 	RegleAcces l4487s(10, "L-4487", PERIODE_ACCES_SOIR);
+	systeme.ajouterRegle(l4487s);
 	//
 	RegleAcces l4489n(20, "L-4489", PERIODE_ACCES_NUIT);
+	systeme.ajouterRegle(l4489n);
 	RegleAcces l4487n(25, "L-4487", PERIODE_ACCES_NUIT);
+	systeme.ajouterRegle(l4487n);
 	//
+
 
 	//Creer un agent de securite
 	//
@@ -127,33 +142,16 @@ int main()
 	systeme.accederLocal(lambda.getNom(), lambda.getPrenom(), lambda.getClasseEmploye(), lambda.getNiveauAcces(), "L-4489", PERIODE_ACCES_SOIR);
 	systeme.accederLocal(lambda.getNom(), lambda.getPrenom(), lambda.getClasseEmploye(), lambda.getNiveauAcces(), "L-4487", PERIODE_ACCES_NUIT);
 
+	Employe* etudiant = new Etudiant("Christophe", "Jean");
+	systeme.accederLocal(etudiant->getNom(), etudiant->getPrenom(), etudiant->getClasseEmploye(), etudiant->getNiveauAcces(), "L-3589", PERIODE_ACCES_SOIR);
+
+	cout << *etudiant;
+
 	//Afficher le journal d'acces du systeme de securite
 	
 	systeme.imprimerJournal();
+	delete etudiant;
 
 	return 0;
 }
-
-
-//Reponse a la question:
-//	
-//	
-//	Employe* etudiant = new Etudiant("Ball", "Damon");
-//
-//	sysSecu.accederLocal	(	etudiant->getNom(), 
-//								etudiant->getPrenom(), 
-//								etudiant->getFonction(), 
-//								etudiant->getNiveauAcces(), 
-//								"L-3589", 
-//								PERIODE_ACCES_NUIT
-//							);
-//
-//	delete etudiant;
-//	
-//	
-//	
-//	
-
-
-
 

@@ -14,7 +14,7 @@ using namespace std;
 struct Journal{
 	string nom = "";
 	string prenom = "";
-	string classeEmploye = 0;
+	string classeEmploye = "";
 	string local = "";
 	string periode = "";
 	string acces = "";
