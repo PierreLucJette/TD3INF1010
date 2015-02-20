@@ -1,4 +1,5 @@
 #include "Employe.h"
+#include "Professeur.h"
 #include <iostream>
 #include <string>
 
@@ -8,6 +9,9 @@ int main()
 {
 	Employe jeanguy("Guy", "Jean"); //TODO: Remove
 	cout << jeanguy; //TODO: Remove
+	Professeur* marie = new Professeur("Therese", "Marie");
+	cout << *marie;
+	delete marie;
 	
 	//Creer le systeme de securite
 	

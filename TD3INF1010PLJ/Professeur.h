@@ -16,7 +16,7 @@ public:
 	virtual unsigned int getNiveauAcces() const;
 	virtual string getClasseEmploye() const;
 
-	virtual friend void operator<< (ostream& os, const Professeur& professeur);
+	 friend ostream& operator<< (ostream& os, const Professeur& professeur);
 
 private:
 	const unsigned int accesProfesseur_ = 10;
