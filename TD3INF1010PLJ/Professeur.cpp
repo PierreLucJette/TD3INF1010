@@ -23,6 +23,6 @@ string Professeur::getClasseEmploye() const{
 }
 
 ostream& operator<< (ostream& os, const Professeur& professeur){
-	os << "Classe " << professeur.getClasseEmploye() << endl << "Prenom: " << professeur.getPrenom() << endl << "Nom: " << professeur.getNom() << endl << "Niveau d'acces: " << professeur.getNiveauAcces() << "\n\n";
+	os << "Classe: " << professeur.getClasseEmploye() << endl << "Prenom: " << professeur.getPrenom() << endl << "Nom: " << professeur.getNom() << endl << "Niveau d'acces: " << professeur.getNiveauAcces() << "\n\n";
 	return os;
 }

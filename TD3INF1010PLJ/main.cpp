@@ -1,6 +1,8 @@
 #include "Employe.h"
 #include "Professeur.h"
 #include "AgentSecurite.h"
+#include "PirateInformatique.h"
+#include "Etudiant.h"
 #include <iostream>
 #include <string>
 
@@ -9,7 +11,11 @@ using namespace std;
 int main()
 {
 	//Creer le systeme de securite
-	
+	AgentSecurite bob("Odenkirk", "Bob");
+	PirateInformatique* paul = new PirateInformatique(bob);
+ 
+	Etudiant Jean("Paul", "Jean");
+	cout << bob << *paul << Jean;//TODO: Remove above this line
 
 	/////////////////////////////////////////////////////////////
 	//Ajouter les regles suivantes:

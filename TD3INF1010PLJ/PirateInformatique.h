@@ -8,10 +8,10 @@
 
 using namespace std;
 
-class PirateInformatique :public Employe{
+class PirateInformatique :public AgentSecurite{
 
 public:
-	PirateInformatique(const AgentSecurite& agentsecurite);
+	PirateInformatique(const AgentSecurite& agentSecurite);
 	virtual ~PirateInformatique();
 
 	virtual unsigned int getNiveauAcces() const;

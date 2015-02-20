@@ -50,5 +50,11 @@
     <ClCompile Include="AgentSecurite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Etudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PirateInformatique.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

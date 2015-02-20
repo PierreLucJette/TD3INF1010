@@ -87,7 +87,9 @@
   <ItemGroup>
     <ClCompile Include="AgentSecurite.cpp" />
     <ClCompile Include="Employe.cpp" />
+    <ClCompile Include="Etudiant.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PirateInformatique.cpp" />
     <ClCompile Include="Professeur.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
