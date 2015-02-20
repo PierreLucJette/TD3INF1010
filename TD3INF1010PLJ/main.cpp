@@ -1,5 +1,6 @@
 #include "Employe.h"
 #include "Professeur.h"
+#include "AgentSecurite.h"
 #include <iostream>
 #include <string>
 
@@ -7,12 +8,6 @@ using namespace std;
 
 int main()
 {
-	Employe jeanguy("Guy", "Jean"); //TODO: Remove
-	cout << jeanguy; //TODO: Remove
-	Professeur* marie = new Professeur("Therese", "Marie");
-	cout << *marie;
-	delete marie;
-	
 	//Creer le systeme de securite
 	
 

@@ -26,7 +26,7 @@ unsigned int Employe::getNiveauAcces() const{
 
 string Employe::getClasseEmploye() const{
 	string temp;
-	temp = typeid(Employe).name(); 
+	temp = typeid(Employe).name();
 	temp.erase(0, 6); //Oui c'est bâtard, mais typeid aussi c'est bâtard
 	return temp;
 }

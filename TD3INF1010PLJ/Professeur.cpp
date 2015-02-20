@@ -12,13 +12,13 @@ Professeur::Professeur(const string& nom, const string& prenom) :Employe(nom, pr
 Professeur::~Professeur(){}
 
 unsigned int Professeur::getNiveauAcces() const{
-	return accesProfesseur_;
+	return accesProfesseur_ + Employe::getNiveauAcces();
 }
 
 string Professeur::getClasseEmploye() const{
 	string temp;
 	temp = typeid(Professeur).name();
-	temp.erase(0, 6); //Oui c'est bâtard, mais typeid aussi c'est bâtard
+	temp.erase(0, 6);
 	return temp;
 }
 

@@ -47,5 +47,8 @@
     <ClCompile Include="Professeur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AgentSecurite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

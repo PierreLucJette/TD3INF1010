@@ -85,6 +85,7 @@
     <ClInclude Include="SystemeSecurite.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AgentSecurite.cpp" />
     <ClCompile Include="Employe.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Professeur.cpp" />
