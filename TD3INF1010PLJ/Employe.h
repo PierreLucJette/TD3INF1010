@@ -17,7 +17,7 @@ public:
 	virtual unsigned int getNiveauAcces() const;
 	virtual string getClasseEmploye() const;
 
-	virtual friend void operator<< (ostream& os, const Employe& employe);
+	friend ostream& operator<< (ostream& os, const Employe& employe);
 
 protected:
 	string nom_;

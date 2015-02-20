@@ -1,7 +1,14 @@
+#include "Employe.h"
+#include <iostream>
+#include <string>
 
+using namespace std;
 
 int main()
 {
+	Employe jeanguy("Guy", "Jean"); //TODO: Remove
+	cout << jeanguy; //TODO: Remove
+	
 	//Creer le systeme de securite
 	
 
