@@ -12,10 +12,10 @@ class Professeur :public Employe{
 public:
 	Professeur(const string& nom, const string& prenom);
 
-	virtual unsigned int getNiveauAcces() const;
-	virtual string getClasseEmploye() const;
+	unsigned int getNiveauAcces() const;
+	string getClasseEmploye() const;
 
-	 friend ostream& operator<< (ostream& os, const Professeur& professeur);
+	friend ostream& operator<< (ostream& os, const Professeur& professeur);
 
 private:
 	const unsigned int accesProfesseur_ = 10;

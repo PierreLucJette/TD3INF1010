@@ -11,10 +11,10 @@ class Employe{
 public:
 	Employe(const string& nom, const string& prenom);
 
-	virtual string getNom() const;
-	virtual string getPrenom() const;
-	virtual unsigned int getNiveauAcces() const;
-	virtual string getClasseEmploye() const;
+	string getNom() const;
+	string getPrenom() const;
+	unsigned int getNiveauAcces() const;
+	string getClasseEmploye() const;
 
 	friend ostream& operator<< (ostream& os, const Employe& employe);
 

@@ -142,16 +142,22 @@ int main()
 	systeme.accederLocal(lambda.getNom(), lambda.getPrenom(), lambda.getClasseEmploye(), lambda.getNiveauAcces(), "L-4489", PERIODE_ACCES_SOIR);
 	systeme.accederLocal(lambda.getNom(), lambda.getPrenom(), lambda.getClasseEmploye(), lambda.getNiveauAcces(), "L-4487", PERIODE_ACCES_NUIT);
 
-	Employe* etudiant = new Etudiant("Christophe", "Jean");
-	systeme.accederLocal(etudiant->getNom(), etudiant->getPrenom(), etudiant->getClasseEmploye(), etudiant->getNiveauAcces(), "L-3589", PERIODE_ACCES_SOIR);
-
-	cout << *etudiant;
+	
 
 	//Afficher le journal d'acces du systeme de securite
-	
 	systeme.imprimerJournal();
-	delete etudiant;
+	
 
 	return 0;
 }
 
+/*	Employe* etudiant = new Etudiant("Christophe", "Jean");
+	systeme.accederLocal(etudiant->getNom(), etudiant->getPrenom(), etudiant->getClasseEmploye(), etudiant->Employe::getNiveauAcces(), "L-3589", PERIODE_ACCES_SOIR);
+	delete etudiant;
+
+	Ce code fonctionne simplement parce ce que la classe étudiant est héritée de la classe Employé. Comme la méthode 
+	getNiveauAcces() d'Employé est publique et que la classe Étudiant hérite de ses methodes publiques, Etudiant peux
+	utiliser la méthode d'Employé. Comme la méthode d'Employé retourne l'attribut private d'Employé accesEmployé_, 
+	un objet de classe Étudiant a accès au niveau d'accès d'un Employé.
+
+*/

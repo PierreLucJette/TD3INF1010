@@ -12,8 +12,8 @@ class AgentSecurite :public Employe{
 public:
 	AgentSecurite(const string& nom, const string& prenom);
 
-	virtual unsigned int getNiveauAcces() const;
-	virtual string getClasseEmploye() const;
+	unsigned int getNiveauAcces() const;
+	string getClasseEmploye() const;
 
 	friend ostream& operator<< (ostream& os, const AgentSecurite& agentSecurite);
 
