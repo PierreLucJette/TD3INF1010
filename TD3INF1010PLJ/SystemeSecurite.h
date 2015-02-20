@@ -12,7 +12,9 @@
 using namespace std;
 
 struct Journal{
-	Employe* lambda;
+	string nom = "";
+	string prenom = "";
+	string classeEmploye = 0;
 	string local = "";
 	string periode = "";
 	string acces = "";
