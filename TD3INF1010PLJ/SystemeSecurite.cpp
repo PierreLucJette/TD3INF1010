@@ -17,13 +17,105 @@ bool SystemeSecurite::accederLocal(const AgentSecurite& agent, const string& loc
 	for (unsigned int i = 0; i < regles_.size(); i++){
 		if (local == regles_[i].getLocal()){
 			if (periode == regles_[i].getPeriode()){
-				if (agent.getNiveauAcces >= regles_[i].getNiveauAccesRequis())
+				if (agent.getNiveauAcces() >= regles_[i].getNiveauAccesRequis())
 					autorise = true;
 			}
 		}
 	}
-	//TODO: Continue Here
+	temporaire.nom = agent.getNom();
+	temporaire.prenom = agent.getPrenom();
+	temporaire.classeEmploye = agent.getClasseEmploye();
+	temporaire.local = local;
+	temporaire.periode = periode;
+	if (autorise)
+		temporaire.acces = "Autorise";
+	else
+		temporaire.acces = "Refuse";
 	journalAcces_.push_back(temporaire);
+	return autorise;
+}
+
+bool SystemeSecurite::accederLocal(const Professeur& prof, const string& local, const string& periode){
+	bool autorise = false;
+	Journal temporaire;
+	for (unsigned int i = 0; i < regles_.size(); i++){
+		if (local == regles_[i].getLocal()){
+			if (periode == regles_[i].getPeriode()){
+				if (prof.getNiveauAcces() >= regles_[i].getNiveauAccesRequis())
+					autorise = true;
+			}
+		}
+	}
+	temporaire.nom = prof.getNom();
+	temporaire.prenom = prof.getPrenom();
+	temporaire.classeEmploye = prof.getClasseEmploye();
+	temporaire.local = local;
+	temporaire.periode = periode;
+	if (autorise)
+		temporaire.acces = "Autorise";
+	else
+		temporaire.acces = "Refuse";
+	journalAcces_.push_back(temporaire);
+	return autorise;
+}
+
+bool SystemeSecurite::accederLocal(const Etudiant& etudiant, const string& local, const string& periode){
+	bool autorise = false;
+	Journal temporaire;
+	for (unsigned int i = 0; i < regles_.size(); i++){
+		if (local == regles_[i].getLocal()){
+			if (periode == regles_[i].getPeriode()){
+				if (etudiant.getNiveauAcces() >= regles_[i].getNiveauAccesRequis())
+					autorise = true;
+			}
+		}
+	}
+	temporaire.nom = etudiant.getNom();
+	temporaire.prenom = etudiant.getPrenom();
+	temporaire.classeEmploye = etudiant.getClasseEmploye();
+	temporaire.local = local;
+	temporaire.periode = periode;
+	if (autorise)
+		temporaire.acces = "Autorise";
+	else
+		temporaire.acces = "Refuse";
+	journalAcces_.push_back(temporaire);
+	return autorise;
+}
+
+bool SystemeSecurite::accederLocal(const string& nom, const string& prenom, const string& fonction, unsigned int niveauAcces, const string& local, const string& periode){
+	bool autorise = false;
+	Journal temporaire;
+	for (unsigned int i = 0; i < regles_.size(); i++){
+		if (local == regles_[i].getLocal()){
+			if (periode == regles_[i].getPeriode()){
+				if (niveauAcces >= regles_[i].getNiveauAccesRequis())
+					autorise = true;
+			}
+		}
+	}
+	temporaire.nom = nom;
+	temporaire.prenom = prenom;
+	temporaire.classeEmploye = fonction;
+	temporaire.local = local;
+	temporaire.periode = periode;
+	if (autorise)
+		temporaire.acces = "Autorise";
+	else
+		temporaire.acces = "Refuse";
+	journalAcces_.push_back(temporaire);
+	return autorise;
+}
+
+bool SystemeSecurite::ajouterRegle(const RegleAcces& regle){
+	bool dejaLa = false;
+	for (int i = 0; i < regles_.size(); i++){
+		if (regle == regles_[i])
+			dejaLa = true;
+	}
+	if (!dejaLa)
+		regles_.push_back(regle);
+	return dejaLa;
 }
 
 void SystemeSecurite::imprimerJournal() const{
