@@ -1,10 +1,7 @@
 #ifndef	SYSTEME_SECURITE_H
 #define SYSTEME_SECURITE_H
 
-#include "RegleAcces.h" 
-#include "AgentSecurite.h"
-#include "Professeur.h"
-#include "Etudiant.h"
+#include "RegleAcces.h"
 #include <vector>
 #include <string>
 

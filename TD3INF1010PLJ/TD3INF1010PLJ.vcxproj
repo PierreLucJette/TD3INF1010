@@ -76,6 +76,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AgentSecurite.h" />
+    <ClInclude Include="Employe.h" />
+    <ClInclude Include="Etudiant.h" />
+    <ClInclude Include="PirateInformatique.h" />
+    <ClInclude Include="Professeur.h" />
+    <ClInclude Include="RegleAcces.h" />
+    <ClInclude Include="SystemeSecurite.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
