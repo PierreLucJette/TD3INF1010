@@ -30,5 +30,3 @@ protected:
 };
 
 #endif
-
-//TODO: double check
