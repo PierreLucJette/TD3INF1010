@@ -12,7 +12,7 @@ Description: Implémentation de la AgentSecurite
 
 using namespace std;
 
-AgentSecurite::AgentSecurite(const string& nom, const string& prenom): Employe(nom, prenom){ //Constructeur par paramètre
+AgentSecurite::AgentSecurite(const string& nom, const string& prenom) : Employe(nom, prenom){ //Constructeur par paramètre
 	nom_ = nom;
 	prenom_ = prenom;
 }

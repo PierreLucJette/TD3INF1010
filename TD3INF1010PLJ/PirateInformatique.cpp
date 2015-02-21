@@ -12,8 +12,12 @@ Description: Implémentation de la classe
 
 using namespace std;
 
-PirateInformatique::PirateInformatique(const AgentSecurite& agentSecurite): AgentSecurite(agentSecurite.getNom(), agentSecurite.getPrenom()){} //Constructeur. Copie les attributs d'un agent de securité
+//Constructeur. Copie les attributs d'un agent de securité
+PirateInformatique::PirateInformatique(const AgentSecurite& agentSecurite): AgentSecurite(agentSecurite.getNom(), agentSecurite.getPrenom())
+{}
 
-unsigned int PirateInformatique::getNiveauAcces() const{ //Retourne le niveau d'accès d'un agent de securité.
+//Retourne le niveau d'accès d'un agent de securité.
+unsigned int PirateInformatique::getNiveauAcces() const
+{ 
 	return AgentSecurite::getNiveauAcces();
 }

@@ -12,31 +12,42 @@ Description: Implémentation de la Employe
 
 using namespace std;
 
-Employe::Employe(const string& nom, const string& prenom){ //Constructeur par paramètre
+//Constructeur par paramètre
+Employe::Employe(const string& nom, const string& prenom)
+{ 
 	nom_ = nom;
 	prenom_ = prenom;
 }
 
-string Employe::getNom() const{ //Accesseur: retourne nom_
+//Accesseur: retourne nom_
+string Employe::getNom() const
+{
 	return nom_;
 }
 
-string Employe::getPrenom() const{ //Accesseur: retourne prenom_
+//Accesseur: retourne prenom_
+string Employe::getPrenom() const
+{ 
 	return prenom_;
 }
 
-unsigned int Employe::getNiveauAcces() const{ //Accesseur: retour accesEmploye_
+//Accesseur: retour accesEmploye_
+unsigned int Employe::getNiveauAcces() const
+{ 
 	return accesEmploye_;
 }
 
-string Employe::getClasseEmploye() const{//Retourne le nom de la classe
+//Retourne le nom de la classe
+string Employe::getClasseEmploye() const
+{
 	string temp;
 	temp = typeid(Employe).name();
 	temp.erase(0, 6); //Justifiable parce que sinon, temp serait égal à "class Employe"
 	return temp;
 }
 
-ostream& operator<< (ostream& os, const Employe& employe){//Affiche les informations relatives à l'objet lorsqu'il surcharge l'opérateur <<
+//Affiche les informations relatives à l'objet lorsqu'il surcharge l'opérateur <<. 
+ostream& operator<< (ostream& os, const Employe& employe){
 	os << "Classe " << employe.getClasseEmploye() << endl << "Prenom: " << employe.getPrenom() << endl << "Nom: " << employe.getNom() << endl << "Niveau d'acces: " << employe.getNiveauAcces() << "\n\n";
 	return os;
 }

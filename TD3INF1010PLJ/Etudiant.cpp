@@ -12,23 +12,31 @@ Description: Implémentation de la classe Etudiant
 
 using namespace std;
 
-Etudiant::Etudiant(const string& nom, const string& prenom) : Employe(nom, prenom){ //Constructeur par paramètre
+//Constructeur par paramètre
+Etudiant::Etudiant(const string& nom, const string& prenom) : Employe(nom, prenom)
+{ 
 	nom_ = nom; 
 	prenom_ = prenom;
 }
 
-unsigned int Etudiant::getNiveauAcces() const{ //Accesseur: retourne accèsEtudiant_
+//Accesseur: retourne accèsEtudiant_
+unsigned int Etudiant::getNiveauAcces() const
+{ 
 	return accesEtudiant_;
 }
 
-string Etudiant::getClasseEmploye() const{//Retourne le nom de la classe
+//Retourne le nom de la classe
+string Etudiant::getClasseEmploye() const
+{
 	string temp;
 	temp = typeid(Etudiant).name();
 	temp.erase(0, 6);//Justifiable parce que sinon, temp serait égal à "class Etudiant"
 	return temp;
 }
 
-ostream& operator<< (ostream& os, const Etudiant& etudiant){//Affiche les informations relatives à l'objet lorsqu'il surcharge l'opérateur <<
+//Affiche les informations relatives à l'objet lorsqu'il surcharge l'opérateur <<
+ostream& operator<< (ostream& os, const Etudiant& etudiant)
+{
 	os << "Classe: " << etudiant.getClasseEmploye() << endl << "Prenom: " << etudiant.getPrenom() << endl << "Nom: " << etudiant.getNom() << endl << "Niveau d'acces: " << etudiant.getNiveauAcces() << "\n\n";
 	return os;
 }

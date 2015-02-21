@@ -12,23 +12,31 @@ Description: Implémentation de la classe Professeur
 
 using namespace std;
 
-Professeur::Professeur(const string& nom, const string& prenom) :Employe(nom, prenom){ //Constructeur: Assigne le nom et prénom en paramètre à l'objet crée
+//Constructeur: Assigne le nom et prénom en paramètre à l'objet crée
+Professeur::Professeur(const string& nom, const string& prenom) :Employe(nom, prenom)
+{ 
 	nom_ = nom;
 	prenom_ = prenom;
 }
 
-unsigned int Professeur::getNiveauAcces() const{ //Retour le niveau d'accès d'un professeur + d'un employé
+//Retourne le niveau d'accès d'un professeur + celui d'un employé
+unsigned int Professeur::getNiveauAcces() const
+{ 
 	return accesProfesseur_ + Employe::getNiveauAcces();
 }
 
-string Professeur::getClasseEmploye() const{ //Retourne le nom de la classe Professeur
+//Retourne le nom de la classe Professeur
+string Professeur::getClasseEmploye() const
+{ 
 	string temp;
 	temp = typeid(Professeur).name();
 	temp.erase(0, 6); //Justifiable parce que sinon, temp serait égal à "class Professeur"
 	return temp;
 }
 
-ostream& operator<< (ostream& os, const Professeur& professeur){ //Affiche les informations relatives à l'objet lorsqu'il surcharge l'opérateur <<
+//Affiche les informations relatives à l'objet lorsqu'il surcharge l'opérateur <<
+ostream& operator<< (ostream& os, const Professeur& professeur)
+{ 
 	os << "Classe: " << professeur.getClasseEmploye() << endl << "Prenom: " << professeur.getPrenom() << endl << "Nom: " << professeur.getNom() << endl << "Niveau d'acces: " << professeur.getNiveauAcces() << "\n\n";
 	return os;
 }

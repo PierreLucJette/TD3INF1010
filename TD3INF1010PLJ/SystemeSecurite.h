@@ -41,9 +41,9 @@ public:
 	SystemeSecurite();
 
 	//Toutes les surcharges d'accederLocal vérifient si l'individu a accès au local à cette période. Cela se fait en comparant les paramètres de la fonction aux règles dans le vecteur regles_. Retourne true si accès accordé. 
-	bool accederLocal(const AgentSecurite& agent,	const string& local, const string& periode);
-	bool accederLocal(const Professeur& prof,		const string& local, const string& periode);
-	bool accederLocal(const Etudiant& etudiant,		const string& local, const string& periode);
+	bool accederLocal(const AgentSecurite& agent, const string& local, const string& periode);
+	bool accederLocal(const Professeur& prof, const string& local, const string& periode);
+	bool accederLocal(const Etudiant& etudiant,	const string& local, const string& periode);
 	bool accederLocal(const string& nom, const string& prenom, const string& fonction, unsigned int niveauAcces, const string& local, const string& periode);
 
 	//Mutateur. Ajoute une regle au vecteur regles_ si pas déjà présent

@@ -30,57 +30,47 @@ using namespace std;
 int main()
 {
 	SystemeSecurite systeme;
+	
+	systeme.ajouterRegle(RegleAcces(1, "L-3589", PERIODE_ACCES_MATIN));
+	systeme.ajouterRegle(RegleAcces(1, "L-3587", PERIODE_ACCES_MATIN));
+	systeme.ajouterRegle(RegleAcces(1, "L-3588", PERIODE_ACCES_MATIN));
 
-	RegleAcces l3589m(1, "L-3589", PERIODE_ACCES_MATIN);
-	systeme.ajouterRegle(l3589m);
-	RegleAcces l3587m(1, "L-3587", PERIODE_ACCES_MATIN);
-	systeme.ajouterRegle(l3587m);
-	RegleAcces l3588m(1, "L-3588", PERIODE_ACCES_MATIN);
-	systeme.ajouterRegle(l3588m);
-	//
-	RegleAcces l3589s(5, "L-3589", PERIODE_ACCES_SOIR);
-	systeme.ajouterRegle(l3589s);
-	RegleAcces l3587s(5, "L-3587", PERIODE_ACCES_SOIR);
-	systeme.ajouterRegle(l3587s);
-	RegleAcces l3588s(5, "L-3588", PERIODE_ACCES_SOIR);
-	systeme.ajouterRegle(l3588s);
-	//
-	RegleAcces l3589n(20, "L-3589", PERIODE_ACCES_NUIT);
-	systeme.ajouterRegle(l3589n);
-	RegleAcces l3587n(20, "L-3587", PERIODE_ACCES_NUIT);
-	systeme.ajouterRegle(l3587n);
-	RegleAcces l3588n(25, "L-3588", PERIODE_ACCES_NUIT);
-	systeme.ajouterRegle(l3588n);
-	//
-	RegleAcces l4489m(10, "L-4489", PERIODE_ACCES_MATIN);
-	systeme.ajouterRegle(l4489m);
-	RegleAcces l4487m(10, "L-4487", PERIODE_ACCES_MATIN);
-	systeme.ajouterRegle(l4487m);
-	//
-	RegleAcces l4489s(10, "L-4489", PERIODE_ACCES_SOIR);
-	systeme.ajouterRegle(l4489s);
-	RegleAcces l4487s(10, "L-4487", PERIODE_ACCES_SOIR);
-	systeme.ajouterRegle(l4487s);
-	//
-	RegleAcces l4489n(20, "L-4489", PERIODE_ACCES_NUIT);
-	systeme.ajouterRegle(l4489n);
-	RegleAcces l4487n(25, "L-4487", PERIODE_ACCES_NUIT);
-	systeme.ajouterRegle(l4487n);
+	systeme.ajouterRegle(RegleAcces(5, "L-3589", PERIODE_ACCES_SOIR));
+	systeme.ajouterRegle(RegleAcces(5, "L-3587", PERIODE_ACCES_SOIR));
+	systeme.ajouterRegle(RegleAcces(5, "L-3588", PERIODE_ACCES_SOIR));
+	
+	systeme.ajouterRegle(RegleAcces(20, "L-3589", PERIODE_ACCES_NUIT));
+	systeme.ajouterRegle(RegleAcces(20, "L-3587", PERIODE_ACCES_NUIT));
+	systeme.ajouterRegle(RegleAcces(25, "L-3588", PERIODE_ACCES_NUIT));
 
+	systeme.ajouterRegle(RegleAcces(10, "L-4489", PERIODE_ACCES_MATIN));
+	systeme.ajouterRegle(RegleAcces(10, "L-4487", PERIODE_ACCES_MATIN));
+	//
+	systeme.ajouterRegle(RegleAcces(10, "L-4489", PERIODE_ACCES_SOIR));
+	systeme.ajouterRegle(RegleAcces(10, "L-4487", PERIODE_ACCES_SOIR));
+	//
+	systeme.ajouterRegle(RegleAcces(20, "L-4489", PERIODE_ACCES_NUIT));
+	systeme.ajouterRegle(RegleAcces(25, "L-4487", PERIODE_ACCES_NUIT));
+
+	//Créer un agent de securite Garry Nelson
 	AgentSecurite garryNelson("Nelson", "Garry");
-
+	//Afficher l'agent
 	cout << garryNelson;
 
+	//Créer un professeur Janet Rion
 	Professeur janetRios("Rios", "Janet");
-
+	//Afficher le professeur
 	cout << janetRios;
-
+	
+	//Créer un etudiant Ball Damon
 	Etudiant damonBall("Ball", "Damon");
-
+	//Afficher l'etudiant
 	cout << damonBall;
 
+	//Créer un Pirate Informatique lambda qui prends les informations de garryNelson
 	PirateInformatique lambda(garryNelson);
 
+	//Tentatives d'acces
 	systeme.accederLocal(garryNelson, "L-3587", PERIODE_ACCES_NUIT);
 	systeme.accederLocal(garryNelson, "L-4489", PERIODE_ACCES_SOIR);
 	systeme.accederLocal(garryNelson, "L-4487", PERIODE_ACCES_NUIT);	
@@ -97,6 +87,7 @@ int main()
 	systeme.accederLocal(lambda.getNom(), lambda.getPrenom(), lambda.getClasseEmploye(), lambda.getNiveauAcces(), "L-4489", PERIODE_ACCES_SOIR);
 	systeme.accederLocal(lambda.getNom(), lambda.getPrenom(), lambda.getClasseEmploye(), lambda.getNiveauAcces(), "L-4487", PERIODE_ACCES_NUIT);
 
+	//Imprime le journal des tentatives d'acces
 	systeme.imprimerJournal();
 
 	return 0;
@@ -106,7 +97,12 @@ int main()
 	Réponse à la question à la fin du TD3:
 	
 	Employe* etudiant = new Etudiant("Christophe", "Jean");
-	systeme.accederLocal(etudiant->getNom(), etudiant->getPrenom(), etudiant->getClasseEmploye(), etudiant->Employe::getNiveauAcces(), "L-3589", PERIODE_ACCES_SOIR);
+	systeme.accederLocal(etudiant->getNom(), 
+						 etudiant->getPrenom(), 
+						 etudiant->getClasseEmploye(), 
+						 etudiant->Employe::getNiveauAcces(), 
+						 "L-3589", 
+						 PERIODE_ACCES_SOIR);
 	delete etudiant;
 
 	Ce code fonctionne simplement parce ce que la classe Étudiant est héritée de la classe Employé. Comme la méthode 

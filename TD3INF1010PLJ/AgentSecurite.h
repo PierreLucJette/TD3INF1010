@@ -15,7 +15,7 @@ Description:
 
 using namespace std;
 
-class AgentSecurite :public Employe{
+class AgentSecurite : public Employe{
 
 public:
 	//Constructeur

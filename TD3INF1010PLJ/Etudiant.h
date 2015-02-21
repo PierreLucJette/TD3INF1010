@@ -15,7 +15,7 @@ Description: Définition de la classe Etudiant
 
 using namespace std;
 
-class Etudiant :public Employe{
+class Etudiant : public Employe{
 
 public:
 	//Constructeur

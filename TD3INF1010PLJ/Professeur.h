@@ -14,7 +14,7 @@ Description: Définition de la classe Professeur
 
 using namespace std;
 
-class Professeur :public Employe{
+class Professeur : public Employe{
 
 public:
 	//Constructeur

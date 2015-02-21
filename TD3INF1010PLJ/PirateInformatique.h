@@ -15,7 +15,7 @@ Description: Définition de la classe PirateInformatique
 
 using namespace std;
 
-class PirateInformatique :public AgentSecurite{
+class PirateInformatique : public AgentSecurite{
 
 public:
 	//Constructeur. Prends en paramètre un agent de sécurité duquel il copie les informations.

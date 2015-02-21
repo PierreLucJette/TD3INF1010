@@ -9,30 +9,44 @@ Description: Implémentation de la classe RegleAcces
 #include <string>
 #include "RegleAcces.h"
 
-RegleAcces::RegleAcces(){ //Constructeur par défaut
+//Constructeur par défaut
+RegleAcces::RegleAcces()
+{ 
 	niveauAccesRequis_ = 1;
 	local_ = "";
 	periode_ = PERIODE_ACCES_MATIN;
 }
 
-RegleAcces::RegleAcces(const unsigned int& niveau, const string& local, const string& periode){ //Constructeur par paramètre
+//Constructeur par paramètre
+RegleAcces::RegleAcces(const unsigned int& niveau, const string& local, const string& periode)
+{ 
 	niveauAccesRequis_ = niveau;
 	local_ = local;
 	periode_ = periode;
 }
 
-string RegleAcces::getLocal() const{ //Accesseur: retour local_
+//Accesseur: retour local_
+string RegleAcces::getLocal() const
+{ 
 	return local_;
 }
 
-unsigned int RegleAcces::getNiveauAccesRequis() const{//Accesseur: retourne niveauAccèsRequis
+//Accesseur: retourne niveauAccèsRequis
+unsigned int RegleAcces::getNiveauAccesRequis() const
+{
 	return niveauAccesRequis_;
 }
 
-string RegleAcces::getPeriode() const{//Accesseur: retourne periode_
+//Accesseur: retourne la periode
+string RegleAcces::getPeriode() const
+{
 	return periode_;
 }
 
-bool RegleAcces::operator== (const RegleAcces& regle) const{ //Surcharge de l'opérateur ==. Vérifie l'égalité entre les deux RegleAcces en cause. Retourne true si égal
-	return (this->getLocal() == regle.getLocal() && this->getNiveauAccesRequis() == regle.getNiveauAccesRequis() && this->getPeriode() == regle.getPeriode());
+//Surcharge de l'opérateur ==. Vérifie l'égalité entre les deux RegleAcces en cause. Retourne true si égal
+bool RegleAcces::operator== (const RegleAcces& regle) const
+{ 
+	return (this->getLocal() == regle.getLocal() && 
+		this->getNiveauAccesRequis() == regle.getNiveauAccesRequis() && 
+		this->getPeriode() == regle.getPeriode());
 }
