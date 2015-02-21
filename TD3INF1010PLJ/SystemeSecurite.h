@@ -1,6 +1,7 @@
 /********************************************************
 Fichier: SystemeSecurite.h
-Auteurs: Pierre-Luc Jetté && Claire Quesnel
+Auteurs: Pierre-Luc Jetté && Claire Quesnel &&
+Chargés de TP d'INF1010
 Date de création: Jeudi 19 février 2015
 Dernière modification: Samedi 21 février 2015
 Description: Définition de la classe SystemeSecurite

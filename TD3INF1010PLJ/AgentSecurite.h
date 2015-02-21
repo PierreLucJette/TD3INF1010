@@ -18,11 +18,14 @@ using namespace std;
 class AgentSecurite :public Employe{
 
 public:
+	//Constructeur
 	AgentSecurite(const string& nom, const string& prenom);
 
+	//Accesseurs
 	unsigned int getNiveauAcces() const;
 	string getClasseEmploye() const;
 
+	//Surcharge de l'opérateur <<. Retourne le nom, prénom, le nom de la classe et le niveau d'accès de l'objet
 	friend ostream& operator<< (ostream& os, const AgentSecurite& agentSecurite);
 
 protected:
