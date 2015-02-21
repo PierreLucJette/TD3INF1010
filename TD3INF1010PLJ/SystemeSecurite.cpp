@@ -15,14 +15,11 @@ bool SystemeSecurite::accederLocal(const AgentSecurite& agent, const string& loc
 	bool autorise = false;
 	Journal temporaire;
 	for (unsigned int i = 0; i < regles_.size(); i++){
-		if (local == regles_[i].getLocal()){
-			if (periode == regles_[i].getPeriode()){
-				if (agent.getNiveauAcces() >= regles_[i].getNiveauAccesRequis())
+		if ((local == regles_[i].getLocal())
+			&& (periode == regles_[i].getPeriode())
+			&& (agent.getNiveauAcces() >= regles_[i].getNiveauAccesRequis()))
 					autorise = true;
-			}
-		}
 	}
-
 	temporaire.nom = agent.getNom();
 	temporaire.prenom = agent.getPrenom();
 	temporaire.classeEmploye = agent.getClasseEmploye();
@@ -40,12 +37,10 @@ bool SystemeSecurite::accederLocal(const Professeur& prof, const string& local, 
 	bool autorise = false;
 	Journal temporaire;
 	for (unsigned int i = 0; i < regles_.size(); i++){
-		if (local == regles_[i].getLocal()){
-			if (periode == regles_[i].getPeriode()){
-				if (prof.getNiveauAcces() >= regles_[i].getNiveauAccesRequis())
-					autorise = true;
-			}
-		}
+		if ((local == regles_[i].getLocal())
+			&& (periode == regles_[i].getPeriode())
+			&& (prof.getNiveauAcces() >= regles_[i].getNiveauAccesRequis()))
+			autorise = true;
 	}
 	temporaire.nom = prof.getNom();
 	temporaire.prenom = prof.getPrenom();
@@ -64,12 +59,10 @@ bool SystemeSecurite::accederLocal(const Etudiant& etudiant, const string& local
 	bool autorise = false;
 	Journal temporaire;
 	for (unsigned int i = 0; i < regles_.size(); i++){
-		if (local == regles_[i].getLocal()){
-			if (periode == regles_[i].getPeriode()){
-				if (etudiant.getNiveauAcces() >= regles_[i].getNiveauAccesRequis())
-					autorise = true;
-			}
-		}
+		if ((local == regles_[i].getLocal())
+			&& (periode == regles_[i].getPeriode())
+			&& (etudiant.getNiveauAcces() >= regles_[i].getNiveauAccesRequis()))
+			autorise = true;
 	}
 	temporaire.nom = etudiant.getNom();
 	temporaire.prenom = etudiant.getPrenom();
@@ -111,7 +104,7 @@ bool SystemeSecurite::accederLocal(const string& nom, const string& prenom, cons
 bool SystemeSecurite::ajouterRegle(const RegleAcces& regle){
 	bool dejaLa = false;
 	if (regles_.size() >= 0){
-		for (int i = 0; i < regles_.size(); i++){
+		for (unsigned int i = 0; i < regles_.size(); i++){
 			if (regle == regles_[i])
 				dejaLa = true;
 		}
@@ -123,6 +116,6 @@ bool SystemeSecurite::ajouterRegle(const RegleAcces& regle){
 
 void SystemeSecurite::imprimerJournal() const{
 	for (unsigned int i = 0; i < journalAcces_.size(); i++){
-		cout << "Entree #" << i + 1 << endl << "Nom, Prenom: " << journalAcces_[i].nom << ", " << journalAcces_[i].prenom << endl << "Classe: " << journalAcces_[i].classeEmploye << endl << "Local: " << journalAcces_[i].local << endl << "Periode: <Matin, Soir ou Nuit> " << journalAcces_[i].periode << endl << "Acces: <Accorde ou Refuse> " << journalAcces_[i].acces << "\n\n";
+		cout << "====================================\n\n" << "Entree #" << i + 1 << endl << "Nom, Prenom: " << journalAcces_[i].nom << ", " << journalAcces_[i].prenom << endl << "Classe: " << journalAcces_[i].classeEmploye << endl << "Local: " << journalAcces_[i].local << endl << "Periode: <Matin, Soir ou Nuit> " << journalAcces_[i].periode << endl << "Acces: <Accorde ou Refuse> " << journalAcces_[i].acces << "\n\n";
 	}
 }

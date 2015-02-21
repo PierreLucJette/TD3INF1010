@@ -1,3 +1,11 @@
+/********************************************************
+Fichier: AgentSecurite.h
+Auteurs: Pierre-Luc Jetté && Claire Quesnel
+Date de création: Jeudi 19 février 2015
+Dernière modification: Samedi 21 février 2015
+Description:
+********************************************************/
+
 #ifndef AGENTSECURITE_H_
 #define AGENTSECURITE_H_
 
